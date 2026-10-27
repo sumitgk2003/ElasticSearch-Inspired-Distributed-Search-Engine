@@ -1,0 +1,26 @@
+|   shards | scorer   | strategy                   |   top10_overlap |   kendall_tau |   ndcg@10 |   identical_rankings |
+|---------:|:---------|:---------------------------|----------------:|--------------:|----------:|---------------------:|
+|        4 | bm25     | global (DFS)               |           1     |        1      |    1      |                1     |
+|        4 | bm25     | periodic (fresh)           |           1     |        1      |    1      |                1     |
+|        4 | bm25     | shard-local                |           0.947 |        0.8559 |    0.9819 |                0.15  |
+|        4 | tfidf    | global (DFS)               |           1     |        1      |    1      |                1     |
+|        4 | tfidf    | periodic (fresh)           |           1     |        1      |    1      |                1     |
+|        4 | tfidf    | shard-local                |           0.954 |        0.8822 |    0.9868 |                0.19  |
+|        4 | bm25     | global (DFS), after writes |           1     |        1      |    1      |                1     |
+|        4 | bm25     | periodic (stale)           |           0.997 |        0.99   |    0.9993 |                0.81  |
+|        4 | bm25     | shard-local, after writes  |           0.948 |        0.8577 |    0.9813 |                0.17  |
+|        4 | tfidf    | global (DFS), after writes |           1     |        1      |    1      |                1     |
+|        4 | tfidf    | periodic (stale)           |           0.998 |        0.9933 |    0.9997 |                0.88  |
+|        4 | tfidf    | shard-local, after writes  |           0.958 |        0.8903 |    0.9882 |                0.2   |
+|        8 | bm25     | global (DFS)               |           1     |        1      |    1      |                1     |
+|        8 | bm25     | periodic (fresh)           |           1     |        1      |    1      |                1     |
+|        8 | bm25     | shard-local                |           0.915 |        0.7769 |    0.9648 |                0.065 |
+|        8 | tfidf    | global (DFS)               |           1     |        1      |    1      |                1     |
+|        8 | tfidf    | periodic (fresh)           |           1     |        1      |    1      |                1     |
+|        8 | tfidf    | shard-local                |           0.941 |        0.8398 |    0.9802 |                0.115 |
+|        8 | bm25     | global (DFS), after writes |           1     |        1      |    1      |                1     |
+|        8 | bm25     | periodic (stale)           |           0.997 |        0.99   |    0.9993 |                0.81  |
+|        8 | bm25     | shard-local, after writes  |           0.912 |        0.7804 |    0.9654 |                0.06  |
+|        8 | tfidf    | global (DFS), after writes |           1     |        1      |    1      |                1     |
+|        8 | tfidf    | periodic (stale)           |           0.998 |        0.9933 |    0.9997 |                0.88  |
+|        8 | tfidf    | shard-local, after writes  |           0.948 |        0.8443 |    0.9827 |                0.105 |

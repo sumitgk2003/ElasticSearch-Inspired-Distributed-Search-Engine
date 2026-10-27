@@ -1,0 +1,48 @@
+shards=4 done
+shards=8 done
+ shards scorer                   strategy  top10_overlap  kendall_tau  ndcg@10  identical_rankings
+      4   bm25               global (DFS)         1.0000       1.0000   1.0000               1.000
+      4   bm25           periodic (fresh)         1.0000       1.0000   1.0000               1.000
+      4   bm25                shard-local         0.9095       0.7624   0.9650               0.035
+      4  tfidf               global (DFS)         1.0000       1.0000   1.0000               1.000
+      4  tfidf           periodic (fresh)         1.0000       1.0000   1.0000               1.000
+      4  tfidf                shard-local         0.8805       0.7434   0.9504               0.040
+      4   bm25 global (DFS), after writes         1.0000       1.0000   1.0000               1.000
+      4   bm25           periodic (stale)         0.9930       0.9760   0.9982               0.695
+      4   bm25  shard-local, after writes         0.9150       0.7759   0.9680               0.035
+      4  tfidf global (DFS), after writes         1.0000       1.0000   1.0000               1.000
+      4  tfidf           periodic (stale)         0.9920       0.9835   0.9984               0.830
+      4  tfidf  shard-local, after writes         0.8850       0.7407   0.9536               0.040
+      8   bm25               global (DFS)         1.0000       1.0000   1.0000               1.000
+      8   bm25           periodic (fresh)         1.0000       1.0000   1.0000               1.000
+      8   bm25                shard-local         0.8575       0.6510   0.9330               0.000
+      8  tfidf               global (DFS)         1.0000       1.0000   1.0000               1.000
+      8  tfidf           periodic (fresh)         1.0000       1.0000   1.0000               1.000
+      8  tfidf                shard-local         0.8590       0.6718   0.9349               0.020
+      8   bm25 global (DFS), after writes         1.0000       1.0000   1.0000               1.000
+      8   bm25           periodic (stale)         0.9930       0.9760   0.9982               0.695
+      8   bm25  shard-local, after writes         0.8715       0.6797   0.9436               0.015
+      8  tfidf global (DFS), after writes         1.0000       1.0000   1.0000               1.000
+      8  tfidf           periodic (stale)         0.9920       0.9835   0.9984               0.830
+      8  tfidf  shard-local, after writes         0.8570       0.6753   0.9406               0.005
+S=1 dfs   qps=347.1 mean=46.1 p95=76.8 p99=124.9 ms
+S=1 local qps=384.7 mean=41.6 p95=73.3 p99=110.3 ms
+S=2 dfs   qps=330.6 mean=48.4 p95=65.8 p99=137.8 ms
+S=2 local qps=318.9 mean=50.2 p95=76.6 p99=103.1 ms
+S=4 dfs   qps=288.8 mean=55.4 p95=84.0 p99=152.9 ms
+S=4 local qps=362.5 mean=44.1 p95=67.5 p99=97.0 ms
+S=8 dfs   qps=225.6 mean=70.8 p95=121.7 p99=192.4 ms
+S=8 local qps=271.6 mean=58.9 p95=135.4 p99=212.4 ms
+wrote results/scaling.png
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/sowreddypranavi/Documents/Elastic search/ElasticSearch-Inspired-Distributed-Search-Engine/experiments/failover.py", line 120, in <module>
+    main()
+  File "/Users/sowreddypranavi/Documents/Elastic search/ElasticSearch-Inspired-Distributed-Search-Engine/experiments/failover.py", line 69, in main
+    c.start()
+  File "/Users/sowreddypranavi/Documents/Elastic search/ElasticSearch-Inspired-Distributed-Search-Engine/dse/cluster.py", line 122, in start
+    _wait_http(p.url, p.popen)
+  File "/Users/sowreddypranavi/Documents/Elastic search/ElasticSearch-Inspired-Distributed-Search-Engine/dse/cluster.py", line 67, in _wait_http
+    raise TimeoutError(f"{url} did not become healthy in {timeout}s")
+TimeoutError: http://127.0.0.1:61397 did not become healthy in 120.0s

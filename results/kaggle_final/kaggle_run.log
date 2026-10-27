@@ -1,0 +1,76 @@
+[{"stream_name":"stderr","time":7.6861952,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":7.686254072,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":7.686260762,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":7.68626444,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":8.297319017,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":8.297383013,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":8.297389644999999,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":8.297393455,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stdout","time":13.146539684,"data":"/kaggle/working/dse-project\n"}
+,{"stream_name":"stdout","time":13.146570434,"data":"code from /kaggle/input/datasets/pranavisowreddy/dse-code | installed: nothing needed\n"}
+,{"stream_name":"stdout","time":14.314043131,"data":"corpus: /kaggle/input/datasets/parthplc/ms-marco-dataset/train.csv | queries: /kaggle/input/datasets/parthplc/ms-marco-dataset/valid.csv\n"}
+,{"stream_name":"stdout","time":14.314165354,"data":"--corpus /kaggle/input/datasets/parthplc/ms-marco-dataset/train.csv --corpus-column finalpassage --queries /kaggle/input/datasets/parthplc/ms-marco-dataset/valid.csv --query-column query --out results --work /kaggle/temp/work\n"}
+,{"stream_name":"stdout","time":26.244741944,"data":"docs per shard: [12502, 12498, 12499, 12501]\n"}
+,{"stream_name":"stdout","time":35.696781001,"data":"allocation: {0: ['node-0', 'node-1'], 1: ['node-1', 'node-0'], 2: ['node-2', 'node-3'], 3: ['node-3', 'node-2']}\n"}
+,{"stream_name":"stdout","time":35.696825047,"data":"green\n"}
+,{"stream_name":"stdout","time":35.696851556,"data":"{'status': 'ok', 'partial': False, 'shards': {'total': 4, 'successful': 4, 'failed': 0, 'missing': []}, 'served_by': {'0': '0@node-0', '1': '1@node-0', '2': '2@node-2', '3': '3@node-2'}, 'took_ms': 10.731}\n"}
+,{"stream_name":"stdout","time":35.824623027,"data":"killed shards on node-0: [0, 1]\n"}
+,{"stream_name":"stdout","time":35.824661345,"data":"ok {'total': 4, 'successful': 4, 'failed': 0, 'missing': []} [{'shard': 0, 'copy': '0@node-0', 'error': 'ClientConnectorError', 'after_ms': 1.39}, {'shard': 1, 'copy': '1@node-0', 'error': 'ClientConnectorError', 'after_ms': 1.42}]\n"}
+,{"stream_name":"stdout","time":35.945105473,"data":"partial True {'total': 4, 'successful': 3, 'failed': 1, 'missing': [1]}\n"}
+,{"stream_name":"stdout","time":185.850041299,"data":"shards=4 done\r\n"}
+,{"stream_name":"stdout","time":347.136927932,"data":"shards=8 done\r\n"}
+,{"stream_name":"stdout","time":347.287919071,"data":" shards scorer                   strategy  top10_overlap  kendall_tau  ndcg@10  identical_rankings\r\n"}
+,{"stream_name":"stdout","time":347.287963146,"data":"      4   bm25               global (DFS)          1.000       1.0000   1.0000               1.000\r\n"}
+,{"stream_name":"stdout","time":347.28797123,"data":"      4   bm25           periodic (fresh)          1.000       1.0000   1.0000               1.000\r\n"}
+,{"stream_name":"stdout","time":347.287975808,"data":"      4   bm25                shard-local          0.947       0.8559   0.9819               0.150\r\n"}
+,{"stream_name":"stdout","time":347.287980274,"data":"      4  tfidf               global (DFS)          1.000       1.0000   1.0000               1.000\r\n"}
+,{"stream_name":"stdout","time":347.288004342,"data":"      4  tfidf           periodic (fresh)          1.000       1.0000   1.0000               1.000\r\n"}
+,{"stream_name":"stdout","time":347.288008957,"data":"      4  tfidf                shard-local          0.954       0.8822   0.9868               0.190\r\n"}
+,{"stream_name":"stdout","time":347.288012659,"data":"      4   bm25 global (DFS), after writes          1.000       1.0000   1.0000               1.000\r\n"}
+,{"stream_name":"stdout","time":347.288016217,"data":"      4   bm25           periodic (stale)          0.997       0.9900   0.9993               0.810\r\n"}
+,{"stream_name":"stdout","time":347.288019646,"data":"      4   bm25  shard-local, after writes          0.948       0.8577   0.9813               0.170\r\n"}
+,{"stream_name":"stdout","time":347.288023147,"data":"      4  tfidf global (DFS), after writes          1.000       1.0000   1.0000               1.000\r\n"}
+,{"stream_name":"stdout","time":347.288026786,"data":"      4  tfidf           periodic (stale)          0.998       0.9933   0.9997               0.880\r\n"}
+,{"stream_name":"stdout","time":347.288030173,"data":"      4  tfidf  shard-local, after writes          0.958       0.8903   0.9882               0.200\r\n"}
+,{"stream_name":"stdout","time":347.288033484,"data":"      8   bm25               global (DFS)          1.000       1.0000   1.0000               1.000\r\n"}
+,{"stream_name":"stdout","time":347.288037013,"data":"      8   bm25           periodic (fresh)          1.000       1.0000   1.0000               1.000\r\n"}
+,{"stream_name":"stdout","time":347.288040404,"data":"      8   bm25                shard-local          0.915       0.7769   0.9648               0.065\r\n"}
+,{"stream_name":"stdout","time":347.288043719,"data":"      8  tfidf               global (DFS)          1.000       1.0000   1.0000               1.000\r\n"}
+,{"stream_name":"stdout","time":347.288047082,"data":"      8  tfidf           periodic (fresh)          1.000       1.0000   1.0000               1.000\r\n"}
+,{"stream_name":"stdout","time":347.288050509,"data":"      8  tfidf                shard-local          0.941       0.8398   0.9802               0.115\r\n"}
+,{"stream_name":"stdout","time":347.288053907,"data":"      8   bm25 global (DFS), after writes          1.000       1.0000   1.0000               1.000\r\n"}
+,{"stream_name":"stdout","time":347.288059185,"data":"      8   bm25           periodic (stale)          0.997       0.9900   0.9993               0.810\r\n"}
+,{"stream_name":"stdout","time":347.288062922,"data":"      8   bm25  shard-local, after writes          0.912       0.7804   0.9654               0.060\r\n"}
+,{"stream_name":"stdout","time":347.288066301,"data":"      8  tfidf global (DFS), after writes          1.000       1.0000   1.0000               1.000\r\n"}
+,{"stream_name":"stdout","time":347.288241314,"data":"      8  tfidf           periodic (stale)          0.998       0.9933   0.9997               0.880\r\n"}
+,{"stream_name":"stdout","time":347.28843286,"data":"      8  tfidf  shard-local, after writes          0.948       0.8443   0.9827               0.105\r\n"}
+,{"stream_name":"stdout","time":395.287411858,"data":"S=1 dfs   qps=679.9 mean=23.5 p95=34.1 p99=40.0 ms\r\n"}
+,{"stream_name":"stdout","time":417.315489253,"data":"S=1 local qps=875.1 mean=18.3 p95=26.8 p99=31.2 ms\r\n"}
+,{"stream_name":"stdout","time":461.925307034,"data":"S=2 dfs   qps=542.9 mean=29.5 p95=38.4 p99=43.6 ms\r\n"}
+,{"stream_name":"stdout","time":483.948199306,"data":"S=2 local qps=715.8 mean=22.4 p95=29.1 p99=33.4 ms\r\n"}
+,{"stream_name":"stdout","time":532.016364433,"data":"S=4 dfs   qps=383.0 mean=41.8 p95=53.2 p99=59.8 ms\r\n"}
+,{"stream_name":"stdout","time":554.081670865,"data":"S=4 local qps=542.6 mean=29.5 p95=39.7 p99=44.3 ms\r\n"}
+,{"stream_name":"stdout","time":610.505422756,"data":"S=8 dfs   qps=216.9 mean=73.8 p95=95.4 p99=120.5 ms\r\n"}
+,{"stream_name":"stdout","time":632.506646096,"data":"S=8 local qps=335.1 mean=47.7 p95=64.8 p99=76.9 ms\r\n"}
+,{"stream_name":"stdout","time":633.726757022,"data":"wrote results/scaling.png\r\n"}
+,{"stream_name":"stdout","time":664.092686008,"data":"allocation: {0: ['node-0', 'node-1'], 1: ['node-1', 'node-0'], 2: ['node-2', 'node-3'], 3: ['node-3', 'node-2']}\r\n"}
+,{"stream_name":"stdout","time":670.159043938,"data":"[  5.0s] kill copy 0@node-0 (primary)\r\n"}
+,{"stream_name":"stdout","time":677.112530372,"data":"[ 12.0s] kill copy 0@node-1 (last copy of shard 0)\r\n"}
+,{"stream_name":"stdout","time":685.542001888,"data":"          phase  requests   qps  error_rate  partial_rate   mean_ms    p99_ms  requests_with_retry\r\n"}
+,{"stream_name":"stdout","time":685.542036915,"data":" both copies up      1696 339.2         0.0      0.000000 23.723311 30.740623                    8\r\n"}
+,{"stream_name":"stdout","time":685.542044003,"data":"  one copy down      2317 331.0         0.0      0.003453 24.122611 33.787160                    8\r\n"}
+,{"stream_name":"stdout","time":685.542049712,"data":"all copies down      3204 400.5         0.0      1.000000 19.913906 26.889417                    0\r\n"}
+,{"stream_name":"stdout","time":685.54205554,"data":"sample response after failure: {\"status\": \"partial\", \"partial\": true, \"shards\": {\"total\": 4, \"successful\": 3, \"failed\": 1, \"missing\": [0]}}\r\n"}
+,{"stream_name":"stdout","time":685.896153359,"data":"wrote results/failover.png\r\n"}
+,{"stream_name":"stderr","time":689.492029152,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":689.492069565,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":689.669225989,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":689.669282913,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":690.441359341,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":690.527225866,"data":"[NbConvertApp] Writing 430386 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":692.96635652,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":693.491409389,"data":"[NbConvertApp] Support files will be in __results___files/\n"}
+,{"stream_name":"stderr","time":693.491448995,"data":"[NbConvertApp] Making directory __results___files\n"}
+,{"stream_name":"stderr","time":693.49170038,"data":"[NbConvertApp] Making directory __results___files\n"}
+,{"stream_name":"stderr","time":693.49201518,"data":"[NbConvertApp] Writing 313032 bytes to __results__.html\n"}
+]

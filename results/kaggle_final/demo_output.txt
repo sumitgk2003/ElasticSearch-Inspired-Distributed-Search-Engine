@@ -1,0 +1,50 @@
+Interactive demo cells from notebooks/kaggle_cluster.ipynb, run on Kaggle
+(MS MARCO, first 50,000 passages of train.csv, 4 shards x 2 copies).
+Copied from the notebook output on 2026-10-27.
+
+--- Quick demo -------------------------------------------------------------
+docs per shard: [12502, 12498, 12499, 12501]
+allocation: {0: ['node-0', 'node-1'], 1: ['node-1', 'node-0'], 2: ['node-2', 'node-3'], 3: ['node-3', 'node-2']}
+green
+{'status': 'ok', 'partial': False, 'shards': {'total': 4, 'successful': 4, 'failed': 0, 'missing': []}, 'served_by': {'0': '0@node-0', '1': '1@node-0', '2': '2@node-2', '3': '3@node-2'}, 'took_ms': 11.84}
+[{'doc_id': 'p0', 'score': 29.006523588373568, 'shard': 1},
+ {'doc_id': 'p37019', 'score': 15.922945954574349, 'shard': 2},
+ {'doc_id': 'p96', 'score': 13.643495764734867, 'shard': 1},
+ {'doc_id': 'p36680', 'score': 13.640024389722758, 'shard': 0},
+ {'doc_id': 'p23676', 'score': 13.62158677707068, 'shard': 0}]
+
+--- Kill node-0, then every copy of shard 1 ---------------------------------
+killed shards on node-0: [0, 1]
+ok {'total': 4, 'successful': 4, 'failed': 0, 'missing': []} [{'shard': 0, 'copy': '0@node-0', 'error': 'ClientConnectorError', 'after_ms': 1.15}, {'shard': 1, 'copy': '1@node-0', 'error': 'ClientConnectorError', 'after_ms': 1.11}]
+partial True {'total': 4, 'successful': 3, 'failed': 1, 'missing': [1]}
+
+--- Shard allocation and rebalancing ---------------------------------------
+== initial allocation  (cluster green)
+  shard 0: primary=node-0  replicas=['node-1']
+  shard 1: primary=node-1  replicas=['node-0']
+  shard 2: primary=node-2  replicas=['node-3']
+  shard 3: primary=node-3  replicas=['node-2']
+  copies per node: {'node-0': 2, 'node-1': 2, 'node-2': 2, 'node-3': 2}
+
+== after node-1 left (re-replicated in 6.9s)  (cluster green)
+  shard 0: primary=node-0  replicas=['node-2']
+  shard 1: primary=node-0  replicas=['node-3']
+  shard 2: primary=node-2  replicas=['node-3']
+  shard 3: primary=node-3  replicas=['node-2']
+  copies per node: {'node-0': 2, 'node-2': 3, 'node-3': 3}
+  promoted to primary: [(1, 'node-0')]
+  copies removed     : [(0, 'node-1'), (1, 'node-1')]
+  copies rebuilt     : [(0, 'node-2'), (1, 'node-3')]
+
+== after node-4 joined (rebalanced in 7.0s)  (cluster green)
+  shard 0: primary=node-0  replicas=['node-4']
+  shard 1: primary=node-0  replicas=['node-4']
+  shard 2: primary=node-2  replicas=['node-3']
+  shard 3: primary=node-3  replicas=['node-2']
+  copies per node: {'node-0': 2, 'node-2': 2, 'node-3': 2, 'node-4': 2}
+  promoted to primary: -
+  copies removed     : [(0, 'node-2'), (1, 'node-3')]
+  copies rebuilt     : [(0, 'node-4'), (1, 'node-4')]
+
+queries served during the changes: {'ok': 2179}
+docs written before the moves still found: ['live-1', 'live-2']
